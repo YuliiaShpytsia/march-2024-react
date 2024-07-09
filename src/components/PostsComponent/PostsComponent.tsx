@@ -11,7 +11,7 @@ const PostsComponent: FC<IProps> = ({posts}) => {
     return (
         <div>
             {
-                posts.map((post: IPostModel) => (<li ><PostComponent key={post.id} post={post}/></li>))
+                posts.map((post: IPostModel) => (<li key={post.id}><PostComponent post={post}/></li>))
             }
         </div>
     );
