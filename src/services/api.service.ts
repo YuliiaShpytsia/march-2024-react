@@ -1,6 +1,5 @@
 import axios, {AxiosResponse} from "axios";
 import {UsersResponseModel} from "../models/UsersResponseModel";
-import {PostsResponseModel} from "../models/PostsResponseModel";
 
 
 let axiosInstance = axios.create({
@@ -14,12 +13,6 @@ const getAllUsers = ():Promise<AxiosResponse<UsersResponseModel>> => {
 
 
 
-const getAllPostsOfUser = (id:number):Promise<AxiosResponse<PostsResponseModel>> =>{
-    return axiosInstance.get(`/posts/user/` + id)
-}
-
-
 export {
-    getAllPostsOfUser,
     getAllUsers
 }
