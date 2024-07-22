@@ -5,6 +5,7 @@ import {postValidator} from "../validators/Post.validator";
 import {IFormModel} from "../models/IFormModel";
 import {IPostModel} from "../models/IPostModel";
 
+
 const FormComponent: FC = () => {
     let {register, handleSubmit, formState: {errors, isValid}}
         = useForm<IFormModel>({mode: "all", resolver: joiResolver(postValidator)});
@@ -13,7 +14,6 @@ const FormComponent: FC = () => {
 
 
     const save = ({title, body, userId}: IFormModel) => {
-        // console.log(formValues);
         fetch('https://jsonplaceholder.typicode.com/posts', {
             method: 'POST',
             body: JSON.stringify({
@@ -28,6 +28,7 @@ const FormComponent: FC = () => {
             .then(value => value.json())
             .then(value => setPost(value));
     };
+
 
     return (
         <div>
